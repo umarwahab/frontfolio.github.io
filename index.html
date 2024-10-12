@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FrontFolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico">
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="bg-gray-100">
+    <!-- Hero Banner Section -->
+    <section id="hero-banner" class="min-h-[800px] bg-hero flex items-center justify-center">
+        <div class="container mx-auto flex flex-col md:flex-row items-center justify-between context-wrapper">
+            <!-- Left side: Text and Button -->
+            <!-- Video Tag -->
+           <!-- <video class="background-video" width="100%" height="auto" autoplay muted loop>
+                <source src="assets/video/web-bg.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video> -->
+             <!-- <div class="overlay"></div> -->
+             <div class="md:w-1/2 left-center px-4">
+                <h1 class="text-[45px] font-boldtext-white mb-4 text-white max-[1024px]:text-center max-[768px]:text-[22px] ">Syed Umar Wahab</h1>
+                <h2 id="typingEffect" class="text-[24px] text-white mb-4  max-[1024px]:text-center max-[768px]:text-[16px]"></h2>
+                <!-- <p class="text-white mb-4">Welcome to FrontFolio</p> -->
+                <button id="aboutBtn" class="hidden bg-white text-blue-500 px-6 py-2 rounded hover:bg-blue-700 hover:text-white transition duration-300">
+                    About
+                </button>
+            </div>
+            
+            <!-- Right side: Image -->
+            <div class="md:w-1/2 px-4">
+                <img src="assets/video/web-bg(4).gif" alt="Person Image" class="rounded-full w-full h-auto">
+            </div>
+        </div>
+    </section>
+    <button id="scrollTopBtn"
+        class="hidden fixed z-[11] bottom-4 right-4 bg-blue-500 text-white p-3 rounded-full shadow-lg hover:bg-blue-700 transition duration-300">
+        &uarr;
+    </button>
+    <!-- Modal Structure -->
+    <div id="aboutModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="text-xl font-bold">About Us</h2>
+                <span id="closeModal" class="close-button">&times;</span>
+            </div>
+            <p class="mt-4">
+                Welcome to our product gallery! We offer the best products for your needs, carefully selected to ensure
+                quality and satisfaction.
+            </p>
+        </div>
+    </div>
+
+
+
+    <!-- Product Grid Section -->
+    <section class="py-16 container mx-auto hidden">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+
+            <!-- Product Box 1 -->
+            <div class="bg-white shadow-md rounded-lg overflow-hidden">
+                <a href="#lightbox1">
+                    <img src="https://via.placeholder.com/300" alt="Product Image 1" class="w-full h-48 object-cover">
+                </a>
+                <div class="p-4">
+                    <h3 class="text-lg font-bold">Product 1</h3>
+                    <p class="text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <a href="#lightbox1" class="text-blue-500">View More</a>
+                </div>
+            </div>
+
+            <!-- Product Box 2 -->
+            <div class="bg-white shadow-md rounded-lg overflow-hidden">
+                <a href="#lightbox2">
+                    <img src="https://via.placeholder.com/300" alt="Product Image 2" class="w-full h-48 object-cover">
+                </a>
+                <div class="p-4">
+                    <h3 class="text-lg font-bold">Product 2</h3>
+                    <p class="text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <a href="#lightbox2" class="text-blue-500">View More</a>
+                </div>
+            </div>
+
+            <!-- Product Box 3 -->
+            <div class="bg-white shadow-md rounded-lg overflow-hidden">
+                <a href="#lightbox3">
+                    <img src="https://via.placeholder.com/300" alt="Product Image 3" class="w-full h-48 object-cover">
+                </a>
+                <div class="p-4">
+                    <h3 class="text-lg font-bold">Product 3</h3>
+                    <p class="text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <a href="#lightbox3" class="text-blue-500">View More</a>
+                </div>
+            </div>
+
+            <!-- Product Box 4 -->
+            <div class="bg-white shadow-md rounded-lg overflow-hidden">
+                <a href="#lightbox4">
+                    <img src="https://via.placeholder.com/300" alt="Product Image 4" class="w-full h-48 object-cover">
+                </a>
+                <div class="p-4">
+                    <h3 class="text-lg font-bold">Product 4</h3>
+                    <p class="text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <a href="#lightbox4" class="text-blue-500">View More</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <div class="product-grid-container">
+        <!-- Zero row -->
+        <div class="product-grid my-[40px] px-4">
+            <div class="product-box">
+                <a href="https://urapptech.com/">
+                <div class="product-image">
+                    <img src="assets/img/pf-001.webp" alt="suw-front-folio" loading="lazy">
+                </div>
+               
+                    <h2 class="explore-text">Explore</h2>
+                </a>
+
+            </div>
+
+            <div class="product-box">
+                <a href="https://fitandfight.urapptech.com/">
+                <div class="product-image">
+                    <img src="assets/img/pf-002.webp" alt="suw-front-folio" loading="lazy">
+                </div>
+                
+                    <h2 class="explore-text">Explore</h2>
+                </a>
+
+            </div>
+
+            <div class="product-box">
+                <a href="https://www.klook.com/">
+                <div class="product-image">
+                    <img src="assets/img/pf-48.webp" alt="suw-front-folio" loading="lazy">
+                </div>
+                
+                    <h2 class="explore-text">Explore</h2>
+                </a>
+
+            </div>
+
+            <div class="product-box">
+                <a href="https://www.tastecard.co.uk/">
+                <div class="product-image">
+                    <img src="assets/img/pf-47.webp" alt="suw-front-folio" loading="lazy">
+                </div>
+              
+                    <h2 class="explore-text">Explore</h2>
+                </a>
+
+            </div>
+        </div>
+        <!-- First row -->
+        <div class="product-grid my-[40px] px-4">
+            <div class="product-box">    
+            <a href="https://travelicious.bold-themes.com/main-demo/destination-grid/">
+                <div class="product-image">
+                    <img src="assets/img/pf-01.webp" alt="suw-front-folio" loading="lazy">
+                </div>
+           
+                    <h2 class="explore-text">Explore</h2>
+                </a>
+
+            </div>
+
+            <div class="product-box">
+                <a href="https://goodquestion.de/shop/">
+                <div class="product-image">
+                    <img src="assets/img/pf-02.webp" alt="suw-front-folio" loading="lazy">
+                </div>
+      
+                    <h2 class="explore-text">Explore</h2>
+                </a>
+
+            </div>
+
+            <div class="product-box">
+                <a href="https://www.viva.com/de-de">
+                <div class="product-image">
+                    <img src="assets/img/pf-03.webp" alt="suw-front-folio" loading="lazy">
+                </div>
+           
+                    <h2 class="explore-text">Explore</h2>
+                </a>
+
+            </div>
+
+            <div class="product-box">
+                <a href="https://vinolisa.de/">
+                <div class="product-image">
+                    <img src="assets/img/pf-04.webp" alt="suw-front-folio" loading="lazy">
+                </div>
+       
+                    <h2 class="explore-text">Explore</h2>
+                </a>
+
+            </div>
+        </div>
+        <!-- second row -->
+        <div id="rowContainer" class="hidden product-grid my-[40px] px-4 ">
+            <a href="https://a1-billards.de/">
+            <div class="product-box">
+                <div class="product-image">
+                    <img src="assets/img/pf-05.webp" alt="suw-front-folio" loading="lazy">
+                </div>
+           
+                    <h2 class="explore-text">Explore</h2>
+                </a>
+
+            </div>
+
+            <div class="product-box">
+                <a href="https://www.die-stadtmeister.de/staging/">
+                <div class="product-image">
+                    <img src="assets/img/pf-06.webp" alt="suw-front-folio" loading="lazy">
+                </div>
+              
+                    <h2 class="explore-text">Explore</h2>
+                </a>
+
+            </div>
+            <div class="product-box">
+                <a href="https://en.zalando.de/?_rfl=de">
+                <div class="product-image">
+                    <img src="assets/img/pf-07.webp" alt="suw-front-folio" loading="lazy">
+                </div>
+               
+                    <h2 class="explore-text">Explore</h2>
+                </a>
+
+            </div>
+            <div class="product-box">
+                <a href="https://www.kuechenmaschinen-shop.de/">
+                <div class="product-image">
+                    <img src="assets/img/pf-08.webp" alt="suw-front-folio" loading="lazy">
+                </div>
+            
+                    <h2 class="explore-text">Explore</h2>
+                </a>
+
+            </div>
+
+        </div>
+        <!-- third row -->
+        <div id="rowContainer" class="hidden product-grid my-[40px] px-4">
+            <a href="https://www.vape-customs.de/">
+            <div class="product-box">
+                <div class="product-image">
+                    <img src="assets/img/pf-09.webp" alt="suw-front-folio" loading="lazy">
+                </div>
+             
+                    <h2 class="explore-text">Explore</h2>
+                </a>
+
+            </div>
+            <div class="product-box">
+                <div class="product-image">
+                    <img src="assets/img/pf-10.webp" alt="suw-front-folio" loading="lazy">
+                </div>
+                <a href="https://omscookware.co.uk/">
+                    <h2 class="explore-text">Explore</h2>
+                </a>
+
+            </div>
+            <div class="product-box">
+                <a href="https://www.villatmo.de/"></a>
+                <div class="product-image">
+                    <img src="assets/img/pf-11.webp" alt="suw-front-folio" loading="lazy">
+                </div>
+                
+                    <h2 class="explore-text">Explore</h2>
+                </a>
+
+            </div>
+            <div class="product-box">
+                <a href="https://fortdress-group.com/">
+                <div class="product-image">
+                    <img src="assets/img/pf-12.webp" alt="suw-front-folio" loading="lazy">
+                </div>
+            
+                    <h2 class="explore-text">Explore</h2>
+                </a>
+
+            </div>
+        </div>
+        <!-- fourth row -->
+        <div id="rowContainer" class="hidden product-grid my-[40px] px-4">
+            <a href="https://www.alphaindustries.com/">
+            <div class="product-box">
+                <div class="product-image">
+                    <img src="assets/img/pf-14.webp" alt="suw-front-folio" loading="lazy">
+                </div>
+                
+                    <h2 class="explore-text">Explore</h2>
+                </a>
+
+            </div>
+            <div class="product-box">
+                <a href="https://avoria-b2b.de/account/login">
+                <div class="product-image">
+                    <img src="assets/img/pf-15.webp" alt="suw-front-folio" loading="lazy">
+                </div>
+          
+                    <h2 class="explore-text">Explore</h2>
+                </a>
+
+            </div>
+            <div class="product-box">
+                <a href="https://eleganttrend.brandcrock.com/">
+                <div class="product-image">
+                    <img src="assets/img/pf-16.webp" alt="suw-front-folio" loading="lazy">
+                </div>
+              
+                    <h2 class="explore-text">Explore</h2>
+                </a>
+
+            </div>
+            <div class="product-box">
+                <a href="https://www.petrhein.de/">
+                <div class="product-image">
+                    <img src="assets/img/pf-17.webp" alt="suw-front-folio" loading="lazy">
+                </div>
+             
+                    <h2 class="explore-text">Explore</h2>
+                </a>
+
+            </div>
+        </div>
+        <!-- fifth row -->
+        <div id="rowContainer" class="hidden product-grid my-[40px] px-4">
+            <a href="https://www.qpool24.com">
+            <div class="product-box">
+                <div class="product-image">
+                    <img src="assets/img/pf-18.webp" alt="suw-front-folio" loading="lazy">
+                </div>
+               
+                    <h2 class="explore-text">Explore</h2>
+                </a>
+
+            </div>
+            <div class="product-box">
+                <a href="https://e-zigaretten-handel.de/?page=home">
+                <div class="product-image">
+                    <img src="assets/img/pf-19.webp" alt="suw-front-folio" loading="lazy">
+                </div>
+                
+                    <h2 class="explore-text">Explore</h2>
+                </a>
+
+            </div>
+            <div class="product-box">
+                <a href="https://www.jungepflanzen.de/">
+                <div class="product-image">
+                    <img src="assets/img/pf-20.webp" alt="suw-front-folio" loading="lazy">
+                </div>
+                
+                    <h2 class="explore-text">Explore</h2>
+                </a>
+
+            </div>
+            <div class="product-box">
+                <a href="https://muenzdiscount.de/">
+                <div class="product-image">
+                    <img src="assets/img/pf-21.webp" alt="suw-front-folio" loading="lazy">
+                </div>
+        
+                    <h2 class="explore-text">Explore</h2>
+                </a>
+
+            </div>
+        </div>
+        <!-- sixth row -->
+        <div id="rowContainer" class="hidden product-grid my-[40px] px-4">
+            <div class="product-box">
+                <a href="https://www.vinylmagic.de/">    
+                <div class="product-image">
+                    <img src="assets/img/pf-22.webp" alt="suw-front-folio" loading="lazy">
+                </div>
+                
+                    <h2 class="explore-text">Explore</h2>
+                </a>
+
+            </div>
+            <div class="product-box">
+                <a href="https://www.objektiv-verleih.de/staging/">
+                <div class="product-image">
+                    <img src="assets/img/pf-23.webp" alt="suw-front-folio" loading="lazy">
+                </div>
+                    <h2 class="explore-text">Explore</h2>
+                </a>
+
+            </div>
+            <div class="product-box">
+                <a href="https://www.memorypc.de/">
+                <div class="product-image">
+                    <img src="assets/img/pf-24.webp" alt="suw-front-folio" loading="lazy">
+                </div>
+                    <h2 class="explore-text">Explore</h2>
+                </a>
+
+            </div>
+            <div class="product-box">
+                <a href="https://shimla-germering.de/menu/">
+                <div class="product-image">
+                    <img src="assets/img/pf-25.webp" alt="suw-front-folio" loading="lazy">
+                </div>
+                    <h2 class="explore-text">Explore</h2>
+                </a>
+
+            </div>
+        </div>
+        <!-- seventh row -->
+        <div id="rowContainer" class="hidden product-grid my-[40px] px-4">
+            <div class="product-box">
+                <a href="https://www.groener-schulze.com/">
+                <div class="product-image">
+                    <img src="assets/img/pf-26.webp" alt="suw-front-folio" loading="lazy">
+                </div>
+                    <h2 class="explore-text">Explore</h2>
+                </a>
+
+            </div>
+            <div class="product-box">
+                <a href="https://www.inkrid.de/">
+                <div class="product-image">
+                    <img src="assets/img/pf-27.webp" alt="suw-front-folio" loading="lazy">
+                </div>
+                    <h2 class="explore-text">Explore</h2>
+                </a>
+
+            </div>
+            <div class="product-box">
+                <a href="https://bbv-domke.de/">
+                <div class="product-image">
+                    <img src="assets/img/pf-28.webp" alt="suw-front-folio" loading="lazy">
+                </div>
+                    <h2 class="explore-text">Explore</h2>
+                </a>
+
+            </div>
+            <div class="product-box">
+                <a href="https://www.avoria-liquids.de/">
+                <div class="product-image">
+                    <img src="assets/img/pf-29.webp" alt="suw-front-folio" loading="lazy">
+                </div>
+                    <h2 class="explore-text">Explore</h2>
+                </a>
+
+            </div>
+        </div>
+        <!-- Eight row -->
+        <div id="rowContainer" class="hidden product-grid my-[40px] px-4">
+            <div class="product-box">
+                <a href="https://cambuy.de/">
+                <div class="product-image">
+                    <img src="assets/img/pf-30.webp" alt="suw-front-folio" loading="lazy">
+                </div>
+                    <h2 class="explore-text">Explore</h2>
+                </a>
+
+            </div>
+            <div class="product-box">
+                <a href="https://shop.studibuch.de/">
+                <div class="product-image">
+                    <img src="assets/img/pf-31.webp" alt="suw-front-folio" loading="lazy">
+                </div>
+                    <h2 class="explore-text">Explore</h2>
+                </a>
+
+            </div>
+            <div class="product-box">
+                <a href="https://www.pastaclean.tv/">
+                <div class="product-image">
+                    <img src="assets/img/pf-32.webp" alt="suw-front-folio" loading="lazy">
+                </div>
+                    <h2 class="explore-text">Explore</h2>
+                </a>
+
+            </div>
+            <div class="product-box">
+                <a href="https://pm-frost.de/">
+                <div class="product-image">
+                    <img src="assets/img/pf-33.webp" alt="suw-front-folio" loading="lazy">
+                </div>
+                    <h2 class="explore-text">Explore</h2>
+                </a>
+
+            </div>
+
+        </div>
+        <!-- ninth row -->
+        <div id="rowContainer" class="hidden product-grid my-[40px] px-4">
+            <div class="product-box">
+                <a href="https://meekilli.com/">
+                <div class="product-image">
+                    <img src="assets/img/pf-34.webp" alt="suw-front-folio" loading="lazy">
+                </div>
+                    <h2 class="explore-text">Explore</h2>
+                </a>
+
+            </div>
+            <div class="product-box">
+                <a href="https://umarwahab.github.io/Car_Showcase/">
+                <div class="product-image">
+                    <img src="assets/img/pf-35.webp" alt="suw-front-folio" loading="lazy">
+                </div>
+                    <h2 class="explore-text">Explore</h2>
+                </a>
+
+            </div>
+            <div class="product-box">
+                <a href="https://umarwahab.github.io/Craze/">
+                <div class="product-image">
+                    <img src="assets/img/pf-36.webp" alt="suw-front-folio" loading="lazy">
+                </div>
+                    <h2 class="explore-text">Explore</h2>
+                </a>
+
+            </div>
+            <div class="product-box">
+                <a href="https://umarwahab.github.io/Electro_Store/">
+                <div class="product-image">
+                    <img src="assets/img/pf-37.webp" alt="suw-front-folio" loading="lazy">
+                </div>
+                    <h2 class="explore-text">Explore</h2>
+                </a>
+
+            </div>
+        </div>
+        <!-- tenth row -->
+        <div id="rowContainer" class="hidden product-grid my-[40px] px-4">
+            <div class="product-box">
+                <a href="https://umarwahab.github.io/Estate_Project/">
+                <div class="product-image">
+                    <img src="assets/img/pf-38.webp" alt="suw-front-folio" loading="lazy">
+                </div>
+                    <h2 class="explore-text">Explore</h2>
+                </a>
+
+            </div>
+            <div class="product-box">
+                <a href="https://umarwahab.github.io/Market_Pulse/">
+                <div class="product-image">
+                    <img src="assets/img/pf-39.webp" alt="suw-front-folio" loading="lazy">
+                </div>
+                    <h2 class="explore-text">Explore</h2>
+                </a>
+
+            </div>
+            <div class="product-box">
+                <a href="https://umarwahab.github.io/MyDirectory/">
+                <div class="product-image">
+                    <img src="assets/img/pf-40.webp" alt="suw-front-folio" loading="lazy">
+                </div>
+                    <h2 class="explore-text">Explore</h2>
+                </a>
+
+            </div>
+            <div class="product-box">
+                <a href="https://umarwahab.github.io/Phlox/">
+                <div class="product-image">
+                    <img src="assets/img/pf-41.webp" alt="suw-front-folio" loading="lazy">
+                </div>
+                    <h2 class="explore-text">Explore</h2>
+                </a>
+
+            </div>
+        </div>
+
+        <!-- eleventh row -->
+        <div id="rowContainer" class="hidden product-grid my-[40px] px-4">
+            <div class="product-box">
+                <a href="https://umarwahab.github.io/RPK-Frontend/">
+                <div class="product-image">
+                    <img src="assets/img/pf-42.webp" alt="suw-front-folio" loading="lazy">
+                </div>
+                    <h2 class="explore-text">Explore</h2>
+                </a>
+
+            </div>
+            <div class="product-box">
+                <a href="https://umarwahab.github.io/machic/">
+                <div class="product-image">
+                    <img src="assets/img/pf-43.webp" alt="suw-front-folio" loading="lazy">
+                </div>
+                    <h2 class="explore-text">Explore</h2>
+                </a>
+
+            </div>
+            <div class="product-box">
+                <a href="hhttps://umarwahab.github.io/vinso/">
+                <div class="product-image">
+                    <img src="assets/img/pf-44.webp" alt="suw-front-folio" loading="lazy">
+                </div>
+                    <h2 class="explore-text">Explore</h2>
+                </a>
+
+            </div>
+            <div class="product-box">
+                <div class="product-image">
+                    <img src="assets/img/pf-45.webp" alt="suw-front-folio" loading="lazy">
+                </div>
+                <a href="#">
+                    <h2 class="explore-text">Explore</h2>
+                </a>
+
+            </div>
+        </div>
+        <!-- Twelth row -->
+        <div id="rowContainer" class="hidden product-grid my-[40px] px-4">
+            <div class="product-box">
+                <a href="http://psarb.urapptech.com/">
+                <div class="product-image">
+                    <img src="assets/img/pf-46.webp" alt="suw-front-folio" loading="lazy">
+                </div>
+                    <h2 class="explore-text">Explore</h2>
+                </a>
+
+            </div>
+            <div class="product-box">
+                <a href="https://umarwahab.github.io/machic/">
+                <div class="product-image">
+                    <img src="assets/img/pf-43.webp" alt="suw-front-folio" loading="lazy">
+                </div>
+                    <h2 class="explore-text">Explore</h2>
+                </a>
+
+            </div>
+            <div class="product-box">
+                <a href="hhttps://umarwahab.github.io/vinso/">
+                <div class="product-image">
+                    <img src="assets/img/pf-44.webp" alt="suw-front-folio" loading="lazy">
+                </div>
+                    <h2 class="explore-text">Explore</h2>
+                </a>
+
+            </div>
+            <div class="product-box">
+                <div class="product-image">
+                    <img src="assets/img/pf-45.webp" alt="suw-front-folio" loading="lazy">
+                </div>
+                <a href="#">
+                    <h2 class="explore-text">Explore</h2>
+                </a>
+
+            </div>
+        </div>
+        <!-- Thirteen row -->
+        <div id="rowContainer" class="hidden product-grid my-[40px] px-4">
+            <div class="product-box">
+                <a href="http://psarb.urapptech.com/">
+                <div class="product-image">
+                    <img src="assets/img/pf-003.webp" alt="suw-front-folio" loading="lazy">
+                </div>
+                    <h2 class="explore-text">Explore</h2>
+                </a>
+
+            </div>
+            <div class="product-box">
+                <a href="http://twentyone.com.pk/">
+                <div class="product-image">
+                    <img src="assets/img/pf-49.webp" alt="suw-front-folio" loading="lazy">
+                </div>
+                    <h2 class="explore-text">Explore</h2>
+                </a>
+
+            </div>
+            <div class="product-box">
+                <a href="https://www.pengsalon.com/">
+                <div class="product-image">
+                    <img src="assets/img/pf-50.webp" alt="suw-front-folio" loading="lazy">
+                </div>
+                    <h2 class="explore-text">Explore</h2>
+                </a>
+
+            </div>
+            <div class="product-box">
+                <div class="product-image">
+                    <img src="assets/img/pf-004.webp" alt="suw-front-folio" loading="lazy">
+                </div>
+                <a href="#">
+                    <h2 class="explore-text">Explore</h2>
+                </a>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading Bar (Initially Hidden) -->
+    <div id="loadingBar" class="hidden text-center my-[20px]">
+        <div class="loading-spinner mx-auto"></div>
+    </div>
+    <!-- View More Button -->
+    <div class="text-center my-[20px]">
+        <button id="viewMoreBtn" class="bg-blue-500 text-white py-2 px-4 rounded-md">View More</button>
+    </div>
+    <!-- Lightbox Gallery -->
+    <!-- <div id="lightbox1" class="lightbox">
+        <img src="https://via.placeholder.com/600" alt="Product Image 1">
+        <a href="#" class="absolute top-4 right-4 text-white text-3xl">&times;</a>
+    </div>
+    <div id="lightbox2" class="lightbox">
+        <img src="https://via.placeholder.com/600" alt="Product Image 2">
+        <a href="#" class="absolute top-4 right-4 text-white text-3xl">&times;</a>
+    </div>
+    <div id="lightbox3" class="lightbox">
+        <img src="https://via.placeholder.com/600" alt="Product Image 3">
+        <a href="#" class="absolute top-4 right-4 text-white text-3xl">&times;</a>
+    </div>
+    <div id="lightbox4" class="lightbox">
+        <img src="https://via.placeholder.com/600" alt="Product Image 4">
+        <a href="#" class="absolute top-4 right-4 text-white text-3xl">&times;</a>
+    </div> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.ripples/0.5.3/jquery.ripples.min.js"></script>
+    <script src="assets/js/custom.js"></script>    
+</body>
+
+</html>

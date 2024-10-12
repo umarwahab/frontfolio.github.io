@@ -1,0 +1,325 @@
+* {
+    font-family: "Noto Sans", sans-serif;
+
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 50;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 500px;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.close-button {
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.bg-hero {
+    /* background-image: url('../video/web-bg\(1\).gif'); */
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    background-color: #202020;
+    position: relative;
+  
+}
+.bg-hero::before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    /* background: #000000a8; */
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+/* Lightbox gallery */
+.lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 50;
+}
+
+.lightbox img {
+    max-width: 80%;
+    max-height: 80%;
+}
+
+.lightbox:target {
+    display: flex;
+}
+
+/* Grid layout for product boxes */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.product-box {
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    border: 1px solid #ddd;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+    border-radius: 12px;
+}
+
+.product-box h2 {
+    margin-top: 10px;
+    font-size: 1.2em;
+}
+
+/* Product image container styling */
+.product-image {
+    width: 100%;
+    height: 300px;
+    /* Container box height */
+    overflow: hidden;
+    /* Ensures the excess image is hidden */
+    position: relative;
+}
+
+.product-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    z-index: 1;
+    opacity: 0.52;
+}
+
+.product-image img {
+    width: 100%;
+    height: 900px;
+    /* Larger image height */
+    object-fit: cover;
+    transform: translateY(0);
+    transition: transform 4s ease;
+
+    /* Smooth slow transition */
+}
+
+/* Hover effect to scroll the image vertically */
+.product-box:hover .product-image img {
+    transform: translateY(-600px);
+    will-change: transform;
+    /* Scroll up 500px to reveal the hidden part of the image */
+}
+
+/* Hover effect on product box */
+.product-box:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Basic styling for the product box */
+.product-box {
+    position: relative;
+    padding: 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+/* Basic styling for the product box */
+.product-box {
+    position: relative;
+    padding: 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+/* Style for the Explore text */
+.explore-text {
+    display: inline-block;
+    color: #333;
+    /* Initial color */
+    font-size: 24px;
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap;
+    /* Prevent wrapping */
+    transition: color 0.3s ease;
+    /* Smooth color transition */
+    width: auto;
+    /* Default state - full width */
+    border-right: none;
+    /* No border initially */
+}
+
+/* Hover effect on the product-box */
+.product-box:hover .explore-text {
+    color: #3498db;
+    /* Change color on hover */
+    
+    /* animation: typing 1.5s steps(8) forwards, blink 0.75s step-end infinite; */
+}
+
+/* Typing effect */
+@keyframes typing {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+/* Blinking cursor effect */
+@keyframes blink {
+    from {
+        border-right-color: transparent;
+    }
+
+    to {
+        border-right-color: #3498db;
+    }
+}
+
+/* Ensure the text is fully visible by default */
+.explore-text {
+    white-space: nowrap;
+    /* Prevent text wrapping */
+    overflow: hidden;
+}
+
+.hidden {
+    display: none;
+}
+
+.loading-spinner {
+    border: 4px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 4px solid #3498db;
+    width: 30px;
+    height: 30px;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+    margin: 10px auto;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.content {
+    position: relative;
+    z-index: 2;
+    color: white;
+    text-align: center;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: Arial, sans-serif;
+}
+
+/* Video styling to cover the entire background */
+.background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: 1;
+    object-fit: cover;
+    /* Ensures the video covers the background properly */
+}
+
+/* Overlay to slightly darken the video */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Adjust transparency */
+    /* z-index: 1; */
+}
+@keyframes entrance {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+h1,  h2,   p {
+    opacity: 0; /* Start hidden */
+    animation: entrance 5s forwards; /* Animation for entrance */
+}
+
+/* Add delay for each element */
+.context-wrapper  h1 {
+    animation-delay: 0.5s;
+}
+
+.context-wrapper h2 {
+    animation-delay: 1s;
+}
+
+.context-wrapper p {
+    animation-delay: 1.5s;
+}
+
+/* Responsive layout for smaller screens */
+@media (max-width: 768px) {
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .product-image {
+        height: 200px;
+        /* Adjust for mobile */
+    }
+}
